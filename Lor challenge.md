@@ -1,13 +1,6 @@
 
-L'agent infiltré **"Mr. crous"** a réussi à intercepter une image provenant du serveur privé d'un célèbre chef cuisinier soupçonné d'espionnage industriel.
-
-Nos analystes de premier niveau ont simplement conclu : _"C'est une belle  de tasty crousty, mais elle ne contient rien d'intéressant. `strings` ne renvoie que du bruit."_
-
-Pourtant, la taille du fichier est suspecte pour une simple image de cette résolution, et une note manuscrite sur le bureau du chef disait :
-
-> _"La vérité est encapsulée dans les commentaires. Si tu ne vois pas le secret, c'est que tu ne regardes pas avec les bons yeux."_
-
-**Votre mission :** 1. Analysez la structure profonde du fichier `challenge_hard.jpg`. 2. Identifiez la double nature de ce spécimen. 3. Extrayez le flag dissimulé par le Chef.
+L'agent infiltré **"Mr. TK78"** a réussi à intercepter une image provenant du serveur privé d'un célèbre chef cuisinier soupçonné d'espionnage industriel sur la recette Original du Tasty Crousty.
+**Votre mission :** Trouver la recette du Tasty Crousty Officiel.
 
 ---
 
