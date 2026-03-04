@@ -32,4 +32,4 @@ def create_blackout_phantom(jpg_path, zip_path, output_path):
 
 
 if __name__ == "__main__":
-    create_blackout_phantom("tasty_base.jpeg", "tasty_secret.zip", "crousty_chall.jpg")
+    create_blackout_phantom("tasty_base.jpeg", "sdfghjazeoazg.zip", "crousty_chall.jpg")
