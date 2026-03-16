@@ -1,33 +1,34 @@
-# 🚩 Write-up : Tasty Secrets - Blackout Phantom
+#  Write-up : Tasty Secrets 
 
 **Catégorie :** Steganography / Forensics  
-**Difficulté :** Hard / Insane  
+**Difficulté :** Easy  
 
 ---
 
-### 🔍 Hints (Indices)
+## Description du Challenge
 
-#### 🟢 Niveau 1 : Le Double Tablier
-La cible utilise une technique de **"Polyglotte"**. Un fichier JPEG peut légalement contenir d'autres données à l'intérieur d'un segment de commentaire (`FF FE`) sans altérer l'affichage de l'image. Vous devez explorer les premiers octets avec un éditeur hexadécimal pour repérer où les données cachées commencent.
+Le Chef Anthinio Parmegano est devenu paranoïaque. Il a dissimulé sa recette secrète au cœur d'un fichier image de son plat phare le "Tasty Crousty", mais il a pris soin d'effacer toute trace visible.
 
-#### 🟡 Niveau 2 : L'Ingrédient Signature
-Les outils automatiques comme `binwalk` ou `unzip` sont inefficaces ici car les signatures standards du format ZIP (`50 4B ...`) ont été remplacées par le marquage : **`CHEF`** (`43 48 45 46` en hexadécimal). Pour ouvrir l'archive, vous devez restaurer ces signatures manuellement ou via un script.
-
-#### 🔴 Niveau 3 : Le Fil d'Ariane (EOCD)
-Une archive ZIP se décode plus facilement par la fin. Localisez le dernier tag **`CHEF`** du fichier ; il correspond à l'**EOCD** (End of Central Directory). En restaurant cette signature précise (`50 4B 05 06`), vous pourrez identifier les pointeurs nécessaires pour reconstruire toute la structure sabotée.
-
----
-*Bonne chance, Agent. La survie du Tasty Crousty est entre vos mains.*
-
-## 📝 Description du Challenge
-
-Le Chef Enzo est devenu paranoïaque. Il a caché sa recette secrète dans une image de son dessert phare, mais il a pris soin de "gommer" toutes les signatures habituelles. Si vous cherchez des indices classiques, vous ne trouverez que du noir. Saurez-vous restaurer la structure du secret ?
+Saurez-vous restaurer la structure du secret ?
 
 **Fichier fourni :** `crousty_chall.jpg`
 
 ---
 
-## 🔍 Phase 1 : Analyse Initiale
+###  Hints
+
+####  Niveau 1 : Le Double Tablier
+La cible utilise une technique de **"Polyglotte"**. Un fichier JPEG peut légalement contenir d'autres données à l'intérieur d'un segment de commentaire (`FF FE`) sans altérer l'affichage de l'image. Vous devez explorer les premiers octets avec un éditeur hexadécimal pour repérer où les données cachées commencent.
+
+####  Niveau 2 : L'Ingrédient Signature
+Les outils automatiques comme `binwalk` ou `unzip` sont inefficaces ici car les signatures standards du format ZIP (`50 4B ...`) ont été remplacées par le marquage : **`CHEF`** (`43 48 45 46` en hexadécimal). Pour ouvrir l'archive, vous devez restaurer ces signatures manuellement ou via un script.
+
+####  Niveau 3 : Le Fil d'Ariane (EOCD)
+Une archive ZIP se décode plus facilement par la fin. Localisez le dernier tag **`CHEF`** du fichier ; il correspond à l'**EOCD** (End of Central Directory). En restaurant cette signature précise (`50 4B 05 06`), vous pourrez identifier les pointeurs nécessaires pour reconstruire toute la structure sabotée.
+
+---
+
+## Phase 1 : Analyse Initiale
 
 Une analyse rapide avec les outils standards ne donne rien de concluant :
 
@@ -43,7 +44,7 @@ En ouvrant le fichier dans un **éditeur hexadécimal** (comme `HxD` ou `xxd`), 
 
 ---
 
-## 🛠 Phase 2 : Identification du Sabotage
+## Phase 2 : Identification du Sabotage
 
 Le challenge repose sur un **polyglotte JPEG/ZIP** dont les structures de contrôle de l'archive ZIP ont été intentionnellement corrompues. Le script de création a remplacé les signatures standard par la constante `CHEF` :
 
@@ -57,7 +58,7 @@ L'archive est techniquement présente dans le segment de commentaire JPEG, mais 
 
 ---
 
-## 🚀 Phase 3 : Résolution (Forensics Chirurgical)
+## Phase 3 : Résolution
 
 Pour résoudre ce challenge, il faut reconstruire manuellement (ou par script) la table des signatures en respectant la spécification du format ZIP (APPNOTE.TXT). L'astuce consiste à utiliser l'**EOCD** (End of Central Directory) situé à la fin de l'archive pour retrouver les pointeurs vers le **Central Directory**.
 
@@ -97,3 +98,4 @@ def restore_zip(input_file, output_file):
     # 3. Restaurer les headers du Central Directory et les Local Headers associés
 
     # (Voir script solver.py pour la logique complète de parcours)
+```
