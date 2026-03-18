@@ -7,4 +7,4 @@ Le Chef *Anthinio Parmegano* est devenu paranoïaque. Il a dissimulé sa recette
 Saurez-vous retrouver les preuves ?
 --- 
 
-![Texte alternatif](maker/tasty_base.jpeg)
+![Texte alternatif](source/tasty_base.jpeg)
