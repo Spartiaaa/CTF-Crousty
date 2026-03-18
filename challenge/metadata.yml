@@ -1,0 +1,30 @@
+challenge:
+  name: "Le Secret Obscur du Chef Parmegano"
+  category: "Stéganographie"
+  difficulty: "Facile"
+
+  description: |
+    Le Chef Anthinio Parmegano est devenu paranoïaque. Il a dissimulé sa
+    recette secrète au cœur d'une image de son dessert phare, mais il a
+    pris soin d'"effacer" toutes les signatures habituelles.
+
+    Si vous cherchez des indices classiques, vous ne trouverez que de l'obscurité.
+    Saurez-vous restaurer la structure du secret ?
+
+  flag: "CTF{P4rm3g4n0_S3cr3t_R3c1p3_2026}"
+
+  files:
+    - challenge/crousty_chall.jpg
+    - challenge/README.txt
+
+  tags:
+    - stego
+    - forensic
+    - lsb
+    - image-manipulation
+
+  hints:
+    - "Si l'image semble totalement noire, le secret est peut-être caché dans les bits invisibles à l'œil nu."
+    - "Vérifiez les bits de poids faible (LSB) ou cherchez des données cachées après les marqueurs de fin d'image."
+
+  state: "hidden"
