@@ -1,5 +1,5 @@
 ###########################################################
-# FLAG : CTF{P4rm3g4n0_S3cr3t_R3c1p3_2026}               #
+# CYCYOM{P4rmIgI4n0_S3cr3t_R3c1p3_2026}               #
 ###########################################################
 
 Bon je l'admets, j'ai effectivement copié la recette de l'excellent Tasty Crousty :(
@@ -39,7 +39,7 @@ Bon je l'admets, j'ai effectivement copié la recette de l'excellent Tasty Crous
    - La troisième avec la chapelure.
    Passe le poulet dans cet ordre précis. C’est le moment de se salir les doigts.
 
-4. LE GRAND BAIN : Fais chauffer l'huile. Quand c’est bien chaud, plonge le poulet. Il doit devenir aussi doré que les lingots du Chef Parmegano. Égoutte sur du papier absorbant.
+4. LE GRAND BAIN : Fais chauffer l'huile. Quand c’est bien chaud, plonge le poulet. Il doit devenir aussi doré que les lingots du Chef Parmigiano. Égoutte sur du papier absorbant.
 
 5. L'ASSEMBLAGE FINAL : Réchauffe ton riz (le figurant discret). Dépose le poulet croustillant par-dessus.
 
